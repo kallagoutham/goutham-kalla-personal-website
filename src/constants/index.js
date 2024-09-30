@@ -124,11 +124,11 @@ const technologies = [
 
 const experiences = [
   {
-    title: "Web Developer Intern",
-    company_name: "Brainovision Solutions Pvt Ltd",
-    icon: "brainovision",
+    title: "Senior Associate Application Development",
+    company_name: "AT&T",
+    icon: "at&t",
     iconBg: "#383E56",
-    date: "September 2021 - October 2021",
+    date: "Feb 2023 - Aug 2024",
     points: [],
   },
   {
@@ -140,11 +140,11 @@ const experiences = [
     points: [],
   },
   {
-    title: "Senior Associate Application Development",
-    company_name: "AT&T",
-    icon: "at&t",
+    title: "Web Developer Intern",
+    company_name: "Brainovision Solutions Pvt Ltd",
+    icon: "brainovision",
     iconBg: "#383E56",
-    date: "Feb 2023 - Aug 2024",
+    date: "September 2021 - October 2021",
     points: [],
   },
 ];

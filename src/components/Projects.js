@@ -5,7 +5,17 @@ import { github } from "../assets";
 import SectionWrapper from "../HigherOrderComponents/SectionWrapper";
 import { projects } from "../constants";
 import { fadeIn, textVariant } from "../utils/motion";
+import { useState,useEffect } from "react";
 const ProjectCard = ({ index, project }) => {
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 1264);
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 1264);
+    };
+
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
   return (
     <motion.div variants={fadeIn("up", "spring", index * 0.5, 0.75)}>
       <Tilt
@@ -16,7 +26,7 @@ const ProjectCard = ({ index, project }) => {
         }}
         className="bg-tertiary p-5 rounded 2-xl sm:w-[360px] w-full"
       >
-        <div className="relative w-full h-[230px]">
+        {!isMobile && <div className="relative w-full h-[230px]">
           <img
             src={project?.image}
             alt={project.name}
@@ -28,7 +38,7 @@ const ProjectCard = ({ index, project }) => {
                 <img src={github} alt="github" className="w-1/2 h-1/2 object-contain"/>
               </div>
           </div>
-        </div>
+        </div>}
         <div className="mt-5">
           <h3 className="text-white font-bold text-[24px]">{project.name}</h3>
           <p className="mt-2 text-[14px]">{project.description}</p>
