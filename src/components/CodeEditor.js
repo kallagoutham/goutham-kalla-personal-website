@@ -21,13 +21,13 @@ export default function CodeEditor() {
   const getDefaultCode = (lang) => {
     switch (lang) {
       case 'python':
-        return 'def solution(nums):\n    return sum(nums)\n\nprint(solution([1, 2, 3]))';
+        return 'def solution(nums):\n  return sum(nums)\n\nprint(solution([1, 2, 3]))';
       case 'cpp':
-        return '#include <iostream>\nusing namespace std;\nint main() {\n    cout << "Hello World";\n    return 0;\n}';
+        return '#include <iostream>\nusing namespace std;\nint main() {\n  cout << "Hello World";\n  return 0;\n}';
       case 'java':
-        return 'public class Main {\n    public static void main(String[] args) {\n        System.out.println("Hello World");\n    }\n}';
+        return 'public class Main {\n  public static void main(String[] args) {\n    System.out.println("Hello World");\n  }\n}';
       case 'c':
-        return '#include <stdio.h>\nint main() {\n    printf("Hello World");\n    return 0;\n}';
+        return '#include <stdio.h>\nint main() {\n  printf("Hello World");\n  return 0;\n}';
       default:
         return '';
     }
@@ -74,7 +74,7 @@ export default function CodeEditor() {
         height="300px"
         theme={oneDark}
         extensions={[getLanguageExtension()]}
-        onChange={(value) => setCode(value)}
+        onChange={(value) =>{ setCode(value); console.log(value); }}
       />
 
       <div className="flex justify-between items-center p-3 border-t">
