@@ -39,7 +39,7 @@ const Hero = () => {
           <p className={`${styles.heroSubText} mt-2 text-white-100`}>
             I am a Software Engineer.
           </p>
-          <div className="mt-10 px-10">
+          <div className="mt-5">
         <img 
           src={require("../assets/goutham_1.jpg") }
           alt="Your description" 
@@ -47,7 +47,6 @@ const Hero = () => {
         />
       </div>
         </div>
-        
       </div>
     </section>
   );

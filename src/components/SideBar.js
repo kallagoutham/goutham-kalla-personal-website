@@ -112,8 +112,7 @@ const SideBar = () => {
           </svg>
         </>
       ),
-      href:"https://drive.google.com/file/d/1kupL7oMs5g-quA_KiguWXYZCyFS8Fg3I/view?usp=drive_link",
-      //href: "https://drive.google.com/file/d/1svGMnbEPpiFqgTGrSpam1B0yfPh-sBZG/view?usp=drive_link",
+      href:"https://drive.google.com/file/d/1FgpOoDQrlJgvW9xF44WYBoIk5b6FdqeP/view?usp=drive_link",
       style: "rounded-br-md",
       download: true,
     },

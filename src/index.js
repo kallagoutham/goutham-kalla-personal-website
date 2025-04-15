@@ -13,6 +13,7 @@ import Projects from "./components/Projects";
 import Contact from "./components/Contact";
 import App from "./App";
 import SideBar from "./components/SideBar";
+import CodeEditor from "./components/CodeEditor";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -28,6 +29,7 @@ root.render(
             <Route path="/skills" element={<Skills />} />
             <Route path="/projects" element={<Projects />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="/code-editor" element={<CodeEditor />} />
           </Routes>
         </div>
       </div>

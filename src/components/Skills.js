@@ -3,7 +3,7 @@ const Skills = () => {
     <div>
       <div className="mt-5">
 
-      Tech dfsdjfj
+      Tech 
       </div>
       </div>
   )

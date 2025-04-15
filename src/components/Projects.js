@@ -6,6 +6,7 @@ import SectionWrapper from "../HigherOrderComponents/SectionWrapper";
 import { projects } from "../constants";
 import { fadeIn, textVariant } from "../utils/motion";
 import { useState,useEffect } from "react";
+
 const ProjectCard = ({ index, project }) => {
   const [isMobile, setIsMobile] = useState(window.innerWidth < 1264);
   useEffect(() => {
