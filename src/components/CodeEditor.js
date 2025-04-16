@@ -48,60 +48,96 @@ export default function CodeEditor() {
     }
   };
 
-  const handleRunCode = () => {
+  const handleRunCode = async () => {
     setIsRunning(true);
-    setTimeout(() => {
-      setOutput('Sample Output\nExecution Complete');
-      setIsRunning(false);
-    }, 1500);
+    setOutput('');
+
+    const payload = {
+      code,
+      language,
+      testcases: [input],
+    };
+
+    try {
+      const response = await fetch('https://compiler-api-production.up.railway.app/execute', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(payload),
+      });
+
+      const result = await response.json();
+
+      if (result.output) {
+        setOutput(result.output.join('\n'));
+      } else {
+        setOutput('No output returned.');
+      }
+    } catch (error) {
+      setOutput('Error while executing code.');
+    }
+
+    setIsRunning(false);
   };
+
+  const [input, setInput] = useState('');
 
   return (
     <div className='min-h-[82vh]'>
-    <div className="max-w-4xl mx-auto mt-20 rounded border shadow">
-      <div className="flex justify-between p-3 border-b">
-        <select value={language} onChange={(e) => setLanguage(e.target.value)} className="border p-1 rounded">
-          <option value="python">Python</option>
-          <option value="cpp">C++</option>
-          <option value="java">Java</option>
-          <option value="c">C</option>
-        </select>
-        <button onClick={() => setCode(getDefaultCode(language))} className="text-sm text-blue-500">Reset</button>
-      </div>
+      <div className="max-w-4xl mx-auto mt-20 rounded border shadow">
+        <div className="flex justify-between p-3 border-b">
+          <select value={language} onChange={(e) => setLanguage(e.target.value)} className="border p-1 rounded">
+            <option value="python">Python</option>
+            <option value="cpp">C++</option>
+            <option value="java">Java</option>
+            <option value="c">C</option>
+          </select>
+          <button onClick={() => setCode(getDefaultCode(language))} className="text-sm text-blue-500">Reset</button>
+        </div>
 
-      <CodeMirror
-        value={code}
-        height="300px"
-        theme={oneDark}
-        extensions={[getLanguageExtension()]}
-        onChange={(value) =>{ setCode(value); console.log(value); }}
-      />
+        <CodeMirror
+          value={code}
+          height="300px"
+          theme={oneDark}
+          extensions={[getLanguageExtension()]}
+          onChange={(value) => setCode(value)}
+        />
 
-      <div className="flex justify-between items-center p-3 border-t">
-        <button
-          onClick={handleRunCode}
-          className={`flex items-center px-4 py-2 rounded text-white font-medium ${isRunning ? 'bg-gray-500' : 'bg-green-600 hover:bg-green-700'}`}
-          disabled={isRunning}
-        >
-          {isRunning ? (
-            <>
-              <RefreshCw size={16} className="mr-2 animate-spin" />
-              Running...
-            </>
-          ) : (
-            <>
-              <Play size={16} className="mr-2" />
-              Run
-            </>
-          )}
-        </button>
-        <div className="text-sm text-gray-500">{code.split('\n').length} lines</div>
-      </div>
+        <div className="p-3 border-t">
+          <textarea
+            placeholder="Enter input here"
+            value={input}
+            onChange={(e) => setInput(e.target.value)}
+            className="w-full h-24 p-2 text-sm border rounded resize-none font-mono"
+          ></textarea>
+        </div>
 
-      <div className="p-3 bg-gray-900 text-green-200 font-mono text-sm h-32 overflow-auto">
-        {output || 'Run your code to see output'}
+        <div className="flex justify-between items-center p-3 border-t">
+          <button
+            onClick={handleRunCode}
+            className={`flex items-center px-4 py-2 rounded text-white font-medium ${isRunning ? 'bg-gray-500' : 'bg-green-600 hover:bg-green-700'}`}
+            disabled={isRunning}
+          >
+            {isRunning ? (
+              <>
+                <RefreshCw size={16} className="mr-2 animate-spin" />
+                Running...
+              </>
+            ) : (
+              <>
+                <Play size={16} className="mr-2" />
+                Run
+              </>
+            )}
+          </button>
+          <div className="text-sm text-gray-500">{code.split('\n').length} lines</div>
+        </div>
+
+        <div className="p-3 bg-gray-900 text-green-200 font-mono text-sm h-32 overflow-auto">
+          {output || 'Run your code to see output'}
+        </div>
       </div>
-    </div>
     </div>
   );
 }
