@@ -1,11 +1,11 @@
 const Footer = () => {
   return (
-    <div className="flex justify-between items-center p-4 bg-gray-800 text-white font-small">
-      <p>© 2024 Goutham Kalla. All rights reserved.</p>
+    <div className="flex justify-between items-center p-4 bg-white text-black font-small shadow-inner">
+      <p>© 2026 Goutham Kalla. All rights reserved.</p>
       <div className="flex space-x-4">
         <ul className="flex space-x-4">
           <li className="social-item">
-            <a href="https://github.com/kallagoutham" className="hover:text-gray-600 transition-colors duration-300">
+            <a href="https://github.com/kallagoutham" className="hover:text-black transition-colors duration-300">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="2em"
@@ -19,7 +19,7 @@ const Footer = () => {
               </svg>
             </a>
           </li>
-          <li className="social-item hover:text-blue-500 transition-colors duration-300">
+          <li className="social-item hover:text-gray-700 transition-colors duration-300">
             <a
               href="https://www.linkedin.com/in/goutham-kalla-3b6133112/"
             >

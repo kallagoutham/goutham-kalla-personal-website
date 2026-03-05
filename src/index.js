@@ -19,9 +19,9 @@ const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <BrowserRouter basename="/">
     <React.StrictMode>
-      <div className="relative z-0 bg-primary bg-hero-pattern animate-bg-move">
+      <div className="relative z-0 apple-bg min-h-screen">
         <div className="bg-center">
-          <Navbar></Navbar>
+          <Navbar />
           <Routes>
             <Route path="/" element={<Hero />} />
             <Route path="/about" element={<About />} />

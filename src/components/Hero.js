@@ -18,25 +18,25 @@ const Hero = () => {
     return () => clearInterval(interval);
   }, [text]);
   return (
-    <section className="relative w-full h-screen mx-auto">
+    <section className="relative w-full h-screen mx-auto bg-white">
       <div
         className={`${styles.paddingX} absolute inset-0 top-[120px] max-w-7xl mx-auto flex flex-row items-start gap-5`}
       >
         <div className="flex flex-col justify-center items-center mt-5">
-          <div className="w-5 h-5 rounded-full bg-[#915eff]">
-            <div className="w-0.5 ml-2.5 mt-5 sm:h-80 h-40 violet-gradient"></div>
+          <div className="w-5 h-5 rounded-full bg-black">
+            <div className="w-0.5 ml-2.5 mt-5 sm:h-80 h-40 bg-black"></div>
           </div>
         </div>
         <div>
           <h1 className={`${styles.heroHeadText}`}>
             Hi, I'm &nbsp;{" "}
-            <motion.span variants={textVariant()} className="text-[#915eff]">
+            <motion.span variants={textVariant()} className="text-black">
               {" "}
               {text}
             </motion.span>
           </h1>
 
-          <p className={`${styles.heroSubText} mt-2 text-white-100`}>
+          <p className={`${styles.heroSubText} mt-2 text-black`}>
             I am a Software Engineer.
           </p>
           <div className="mt-5">

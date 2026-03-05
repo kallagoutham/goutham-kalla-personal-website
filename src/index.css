@@ -10,7 +10,7 @@
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
   scroll-behavior: smooth;
-  color-scheme: dark;
+  color-scheme: light;
 }
 
 .hash-span {
@@ -19,18 +19,10 @@
   display: block;
 }
 
-.black-gradient {
-  background: #000000; /* fallback for old browsers */
-  background: -webkit-linear-gradient(
-    to right,
-    #434343,
-    #000000
-  ); /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(
-    to right,
-    #434343,
-    #000000
-  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+
+.apple-bg {
+  background: #fff;
 }
 
 .violet-gradient {
@@ -44,7 +36,7 @@
 }
 
 .green-pink-gradient {
-  background: "#050816"; /* Primary dark color */
+  background: #050816; /* Primary dark color */
   background: linear-gradient(90.13deg, #0f4a46 1.9%, #633969 97.5%);
   background: -webkit-linear-gradient(-90.13deg, #0f4a46 1.9%, #934c9d 97.5%);
 }
