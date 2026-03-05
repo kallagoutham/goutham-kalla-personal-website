@@ -14,13 +14,14 @@ import Contact from "./components/Contact";
 import App from "./App";
 import SideBar from "./components/SideBar";
 import CodeEditor from "./components/CodeEditor";
+import SectionWrapper from "./HigherOrderComponents/SectionWrapper";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <BrowserRouter basename="/">
     <React.StrictMode>
       <div className="relative z-0 apple-bg min-h-screen">
-        <div className="bg-center">
+        <div className="bg-center flex-1">
           <Navbar />
           <Routes>
             <Route path="/" element={<Hero />} />
@@ -29,13 +30,11 @@ root.render(
             <Route path="/skills" element={<Skills />} />
             <Route path="/projects" element={<Projects />} />
             <Route path="/contact" element={<Contact />} />
-            <Route path="/code-editor" element={<CodeEditor />} />
+            <Route path="/code-editor" element={SectionWrapper(CodeEditor, "code-editor")()} />
           </Routes>
         </div>
-      </div>
-      <div>
-        <SideBar />
         <App />
+        <SideBar />
       </div>
     </React.StrictMode>
   </BrowserRouter>

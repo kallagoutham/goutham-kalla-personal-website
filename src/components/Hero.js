@@ -1,8 +1,6 @@
 import { styles } from "../styles";
 import { useState, useEffect, useRef } from "react";
 import { name } from "../constants";
-import { textVariant } from "../utils/motion";
-import { motion } from "framer-motion";
 
 const Hero = () => {
   const ref = useRef(0);
@@ -18,9 +16,16 @@ const Hero = () => {
     return () => clearInterval(interval);
   }, [text]);
   return (
-    <section className="relative w-full h-screen mx-auto bg-white">
+    <section className="relative w-full h-screen mx-auto bg-white overflow-hidden">
+      <img 
+        src={require("../assets/goutham_ghibli.png")}
+        alt="Goutham Ghibli" 
+        className="absolute inset-0 w-full h-full object-cover opacity-10 pointer-events-none select-none"
+        style={{zIndex: 0}}
+      />
       <div
         className={`${styles.paddingX} absolute inset-0 top-[120px] max-w-7xl mx-auto flex flex-row items-start gap-5`}
+        style={{zIndex: 1}}
       >
         <div className="flex flex-col justify-center items-center mt-5">
           <div className="w-5 h-5 rounded-full bg-black">
@@ -28,24 +33,12 @@ const Hero = () => {
           </div>
         </div>
         <div>
-          <h1 className={`${styles.heroHeadText}`}>
-            Hi, I'm &nbsp;{" "}
-            <motion.span variants={textVariant()} className="text-black">
-              {" "}
-              {text}
-            </motion.span>
+          <h1 className={`${styles.heroHeadText} relative z-10`}>
+            Hi, I'm <span className="font-bold text-black">Goutham</span>
           </h1>
-
-          <p className={`${styles.heroSubText} mt-2 text-black`}>
-            I am a Software Engineer.
+          <p className={`${styles.heroSubText} mt-2 text-black relative z-10`}>
+            I am a Software Engineer passionate about superb design and innovation.
           </p>
-          <div className="mt-5">
-        <img 
-          src={require("../assets/goutham_1.jpg") }
-          alt="Your description" 
-          className="w-48 h-auto rounded-2xl shadow-lg"
-        />
-      </div>
         </div>
       </div>
     </section>
