@@ -11,6 +11,7 @@ import { textVariant } from "../utils/motion";
 
 const companyIcons = {
   //eslint-disable-next-line
+  allocore: require("../assets/company/allocore_logo.png"),
   "at&t": require("../assets/company/T_BIG.png"),
   ennea: require("../assets/company/ennea_solutions.png"),
   brainovision: require("../assets/company/brainovision_logo.png"),

@@ -29,11 +29,17 @@ import languageengine from "./projects/languageengine.png";
 import medicalinventory from "./projects/medicalinventory.png";
 import personalportfolio from "./projects/personalportfolio.png";
 import smartassistbanner from "./projects/smartassistbanner.png";
+import pbft from "./projects/pbft.png";
+import paxos from "./projects/paxos.png";
+import replicatedstatemachine from "./projects/replicatedstatemachine.png";
 
 export {
   bujji,
   caluculator,
   crm,
+  pbft,
+  paxos,
+  replicatedstatemachine,
   fakecurrency,
   languageengine,
   medicalinventory,

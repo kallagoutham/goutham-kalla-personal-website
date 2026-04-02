@@ -25,7 +25,7 @@ const ProjectCard = ({ index, project }) => {
           scale: 1,
           speed: 450,
         }}
-        className="bg-tertiary p-5 rounded 2-xl sm:w-[360px] w-full"
+        className="bg-white p-5 rounded-2xl sm:w-[360px] w-full border border-gray-100 shadow-lg"
       >
         {!isMobile && <div className="relative w-full h-[230px]">
           <img
@@ -33,7 +33,7 @@ const ProjectCard = ({ index, project }) => {
             alt={project.name}
             className="w-full h-full object-contain rounded-2xl"
           />
-          <div className="absolute inset-0  bg-black bg-opacity-50 rounded-2xl flex justify-center items-center opacity-0 hover:opacity-100 card-img_hover transition-all duration-300">
+          <div className="absolute inset-0 bg-black/45 rounded-2xl flex justify-center items-center opacity-0 hover:opacity-100 card-img_hover transition-all duration-300">
             <div onClick={()=>window.open(project.source_code_link,"blank")}
               className="black-gradient w-10 h-10 rounded-full justify-center flex items-center cursor-pointer">
                 <img src={github} alt="github" className="w-1/2 h-1/2 object-contain"/>
@@ -41,8 +41,8 @@ const ProjectCard = ({ index, project }) => {
           </div>
         </div>}
         <div className="mt-5">
-          <h3 className="text-white font-bold text-[24px]">{project.name}</h3>
-          <p className="mt-2 text-[14px]">{project.description}</p>
+          <h3 className="text-black font-bold text-[24px]">{project.name}</h3>
+          <p className="mt-2 text-[14px] text-secondary">{project.description}</p>
         </div>
         <div className="mt-3 flex flex-wrap gap-2 ">
           {project.tags.map((tag, index) => (

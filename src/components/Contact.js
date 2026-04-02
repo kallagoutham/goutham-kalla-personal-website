@@ -19,7 +19,7 @@ const Contact = () => {
     setLoading(true);
     emailjs
       .send(
-        "service_2jbmzvk",
+        "service_jj25ynq",
         "template_fwta7eh",
         {
           from_name: form.name,
@@ -46,7 +46,7 @@ const Contact = () => {
     <div className="xl:mt-10 xl:flex-row flex-col-reverse flex gap-20 overflow-hidden pt-20 pb-10">
       <motion.div
         variants={slideIn("left", "tween", 0.2, 1)}
-        className="flex-[0.75] bg-black-100 p-8 rounded-2xl"
+        className="flex-[0.75] bg-white p-8 rounded-2xl border border-gray-100 shadow-lg"
       >
         <p className={styles.sectionSubText}>Get in touch</p>
         <h2 className={styles.sectionHeadText}>Contact</h2>
@@ -56,37 +56,37 @@ const Contact = () => {
           className="mt-12 flex flex-col gap-4"
         >
           <label className="flex flex col">
-            <span className="text-white font-medium">Your Name</span>
+            <span className="text-black font-medium">Your Name</span>
           </label>
           <input
             type="text"
             name="name"
             value={form.name}
             onChange={handleChange}
-            className="bg-teritary py-4 px-4  text-white text-white rounded-lg placeholder:text-secondary placeholder:opacity-20 ooutlined-none border-none font-medium"
+            className="bg-gray-50 py-4 px-4 text-black rounded-lg placeholder:text-secondary placeholder:opacity-50 outline-none border border-gray-200 font-medium"
             placeholder="example: Goutham Kalla"
           />
 
           <label className="flex flex col">
-            <span className="text-white font-medium">Your Email</span>
+            <span className="text-black font-medium">Your Email</span>
           </label>
           <input
             type="email"
             name="email"
             value={form.email}
             onChange={handleChange}
-            className="bg-teritary py-4 px-4  text-white text-white rounded-lg placeholder:text-secondary placeholder:opacity-20 ooutlined-none border-none font-medium"
+            className="bg-gray-50 py-4 px-4 text-black rounded-lg placeholder:text-secondary placeholder:opacity-50 outline-none border border-gray-200 font-medium"
             placeholder="example: abc@example.com"
           />
 
           <label className="flex flex col">
-            <span className="text-white font-medium">Your Message</span>
+            <span className="text-black font-medium">Your Message</span>
           </label>
           <textarea
             name="message"
             value={form.message}
             onChange={handleChange}
-            className="bg-teritary py-4 px-4  text-white text-white rounded-lg placeholder:text-secondary placeholder:opacity-20 ooutlined-none border-none font-medium"
+            className="bg-gray-50 py-4 px-4 text-black rounded-lg placeholder:text-secondary placeholder:opacity-50 outline-none border border-gray-200 font-medium"
             placeholder="what do you want to say"
           />
           <button

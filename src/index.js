@@ -13,8 +13,8 @@ import Projects from "./components/Projects";
 import Contact from "./components/Contact";
 import App from "./App";
 import SideBar from "./components/SideBar";
-import CodeEditor from "./components/CodeEditor";
-import SectionWrapper from "./HigherOrderComponents/SectionWrapper";
+// import CodeEditor from "./components/CodeEditor";
+// import SectionWrapper from "./HigherOrderComponents/SectionWrapper";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -30,7 +30,7 @@ root.render(
             <Route path="/skills" element={<Skills />} />
             <Route path="/projects" element={<Projects />} />
             <Route path="/contact" element={<Contact />} />
-            <Route path="/code-editor" element={SectionWrapper(CodeEditor, "code-editor")()} />
+            {/* <Route path="/code-editor" element={SectionWrapper(CodeEditor, "code-editor")()} /> */}
           </Routes>
         </div>
         <App />

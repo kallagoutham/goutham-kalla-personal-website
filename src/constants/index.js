@@ -21,6 +21,9 @@ import {
   medicalinventory,
   personalportfolio,
   smartassistbanner,
+  pbft,
+  paxos,
+  replicatedstatemachine,
 } from "../assets";
 
 export const name = "Goutham";
@@ -38,10 +41,10 @@ export const navLinks = [
     id: "projects",
     title: "Projects",
   },
-  {
-    id:"code-editor",
-    title:"Code Editor",
-  },
+  // {
+  //   id:"code-editor",
+  //   title:"Code Editor",
+  // },
   // {
   //   id:"skills",
   //   title:"Skills"
@@ -128,6 +131,14 @@ const technologies = [
 
 const experiences = [
   {
+    title: "Software Developer ",
+    company_name: "Allocore",
+    icon: "allocore",
+    iconBg: "#f6f6f9ff",
+    date: "May 2025 - Present",
+    points: [],
+  },
+  {
     title: "Senior Associate Application Development",
     company_name: "AT&T",
     icon: "at&t",
@@ -154,6 +165,165 @@ const experiences = [
 ];
 
 const projects = [
+  {
+    name: "Permissioned Blockchain using PBFT Algorithm",
+    description:
+      "A permissioned blockchain system that implements the Practical Byzantine Fault Tolerance (PBFT) algorithm to ensure secure and efficient consensus among a predefined set of nodes, providing a robust solution for applications requiring high trust and reliability.",
+    tags: [
+      {
+        name: "distributed-systems",
+        color: "pink-text-gradient",
+      },
+      {
+        name: "spring-boot",
+        color: "blue-text-gradient",
+      },
+      {
+        name: "spring-security",
+        color: "green-text-gradient",
+      },
+      {
+        name: "cryptography",
+        color: "pink-text-gradient",
+      },
+      {
+        name: "postgresql",
+        color: "blue-text-gradient",
+      },
+      {
+        name: "docker",
+        color: "green-text-gradient",
+      },
+      {
+        name: "redis",
+        color: "pink-text-gradient",
+      },
+      {
+        name: "multithreading",
+        color: "blue-text-gradient",
+      },
+      {
+        name: "consensus-algorithms",
+        color: "green-text-gradient",
+      },
+      {
+        name: "pbft",
+        color: "pink-text-gradient",
+      },
+    ],
+    image: pbft,
+    source_code_link: "https://github.com/kallagoutham/2pc-pbft.git",
+  },
+  {
+    name: "Banking System using Paxos Algorithm",
+    description:
+      "A distributed consensus algorithm used to achieve agreement on a single data value among a group of nodes in a fault-tolerant manner.",
+    tags: [
+      {
+        name: "distributed-systems",
+        color: "pink-text-gradient",
+      },
+      {
+        name: "spring-boot",
+        color: "blue-text-gradient",
+      },
+      {
+        name: "django",
+        color: "green-text-gradient",
+      },
+      {
+        name: "http",
+        color: "pink-text-gradient",
+      },
+      {
+        name: "postgresql",
+        color: "blue-text-gradient",
+      },
+      {
+        name: "backend-systems",
+        color: "green-text-gradient",
+      },
+      {
+        name: "redis",
+        color: "pink-text-gradient",
+      },
+      {
+        name: "scalability",
+        color: "blue-text-gradient",
+      },
+      {
+        name: "reliability",
+        color: "green-text-gradient",
+      },
+      {
+        name: "paxos",
+        color: "pink-text-gradient",
+      },
+      {
+        name: "consensus-algorithms",
+        color: "blue-text-gradient",
+      },
+      {
+        name: "raft",
+        color: "green-text-gradient",
+      },
+      {
+        name: "banking-systems",
+        color: "pink-text-gradient",
+      },
+    ],
+    image: paxos,
+    source_code_link: "https://github.com/kallagoutham/Paxos-Implementation.git",
+  },
+  {
+    name: "Replicated State Machine using Raft Algorithm",
+    description:
+      "A replicated state machine that utilizes the Raft consensus algorithm to ensure consistency and fault tolerance across a cluster of nodes, providing a reliable solution for distributed applications that require high availability and strong consistency guarantees.",
+    tags: [
+      {
+        name: "raft",
+        color: "pink-text-gradient",
+      },
+      {
+        name: "consensus-algorithms",
+        color: "blue-text-gradient",
+      },
+      {
+        name: "distributed-systems",
+        color: "green-text-gradient",
+      },
+      {
+        name: "distributed key-value store",
+        color: "pink-text-gradient",
+      },
+      {
+        name: "postgresql",
+        color: "blue-text-gradient",
+      },
+      {
+        name: "cpp",
+        color: "green-text-gradient",
+      },
+      {
+        name: "consistency",
+        color: "pink-text-gradient",
+      },
+      {
+        name: "reliability",
+        color: "blue-text-gradient",
+      },
+      {
+        name: "multithreading",
+        color: "green-text-gradient",
+      },
+      {
+        name: "make",
+        color: "pink-text-gradient",
+      },
+    ],
+    image: replicatedstatemachine,
+    source_code_link: "https://github.com/kallagoutham/Replicated-State-Machine-RAFT-Consensus-Algorithm.git",
+  },
   {
     name: "Better You",
     description:
